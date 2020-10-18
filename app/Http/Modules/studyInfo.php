@@ -9,7 +9,7 @@ class studyInfo
     public $prop;
 
 
-    function get_kt_from_string($items)
+   public function get_kt_from_string($items)
     {
         $studyInfo = new studyInfo();
         $studyInfo->name_discipline = '';

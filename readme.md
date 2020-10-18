@@ -25,3 +25,8 @@ Then install, migrate, seed, all that jazz:
 4. `php artisan serve`
 
 The API will be running on `localhost:8000`.
+____
+## Дополнения
+1. `app/Http/Modules/studentInfo/getInfoAboutStudent()`    
+ строка 24 -  __"data-term_id=x"__ где x - номер семестра в системе КузГТУ.    
+  - [ ] Можно сделать необязательным параметром для выгрузки данных за любой семестр.

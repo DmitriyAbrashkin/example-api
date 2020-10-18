@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Modules\studentInfo;
-use App\Modules\studyInfo;
 
 class StudentInfoController extends Controller
 {

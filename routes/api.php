@@ -18,10 +18,13 @@ use Illuminate\Http\Request;
 }); */
 
 Route::get('kt/{number}', 'StudentInfoController@index');
+Route::get('news/{number}', 'NewsController@index');
+Route::get('detalNews', 'DetalNewsController@index');
 
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 Route::post('register', 'Auth\RegisterController@register');
+
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('articles', 'ArticleController@index');

@@ -2,7 +2,7 @@
 
 namespace App\Modules;
 
-class studyInfo
+class StudyInfo
 {
     public $name_discipline;
     public $kt_result;
@@ -11,7 +11,7 @@ class studyInfo
 
    public function get_kt_from_string($items)
     {
-        $studyInfo = new studyInfo();
+        $studyInfo = new StudyInfo();
         $studyInfo->name_discipline = '';
         $studyInfo->kt_result = array();
         $studyInfo->prop = array();

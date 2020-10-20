@@ -2,10 +2,10 @@
 
 namespace App\Modules;
 
-use App\Modules\studyInfo;
+use App\Modules\StudyInfo;
 use DiDom\Document;
 
-class studentInfo
+class StudentInfo
 {
     public $name_student;
     public $number;
@@ -16,7 +16,7 @@ class studentInfo
     {
         $this->number = $number;
         $this->studyInfo = array();
-        $studyInfo = new studyInfo();
+        $studyInfo = new StudyInfo();
         $site_name = "https://portal.kuzstu.ru/learning/progress/current/report/cp3?search_str=" . $this->number . "&is_filters_enabled=1";
         $document = new Document($site_name, true);
 

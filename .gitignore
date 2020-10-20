@@ -8,3 +8,6 @@ Homestead.json
 Homestead.yaml
 .env
 phpunit
+/vscode
+.vscode/sftp.json
+.vscode/launch.json

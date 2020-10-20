@@ -30,3 +30,7 @@ ____
 1. `app/Http/Modules/studentInfo/getInfoAboutStudent()`    
  строка 24 -  __"data-term_id=x"__ где x - номер семестра в системе КузГТУ.    
   - [ ] Можно сделать необязательным параметром для выгрузки данных за любой семестр.
+
+2. Роуты:    
+`Route::get('news/{number}', 'NewsController@index');` -  номер страницы с новостями на сайте, для отображения списка новостей
+`Route::get('detalNews', 'DetalNewsController@index');` - host/api/detalNews?url=urlNews для отображения детальной информации 

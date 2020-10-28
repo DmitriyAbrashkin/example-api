@@ -10,6 +10,6 @@ class StudentInfoController extends Controller
     {
         $studentInfo = new StudentInfo();
         $studentInfo->getInfoAboutStudent($number);
-        return response()->json($studentInfo, JSON_UNESCAPED_UNICODE);
+        return response()->json($studentInfo, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     }
 }

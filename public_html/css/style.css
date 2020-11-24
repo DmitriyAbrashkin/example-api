@@ -1,0 +1,140 @@
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+  }
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }
+
+.tab input, .tab-content { display: none; }
+.tab {
+ font: 0.8rem/1.2 Arial, sans-serif; /* Параметры шрифта */
+ border: 1px solid #e9eaec; /* Параметры рамки */
+ border-radius: 3px; /* Скругляем уголки */
+ color: #848994; /* Цвет текста */
+ margin-bottom: 10px; /* Расстояние между пунктами */
+ margin-right: 13px;
+}
+.tab-title {
+ padding: 10px; /* Поля вокруг текста */
+ display: block; /* Блочный элемент */
+ text-transform: uppercase; /* Все буквы заглавные */
+ font-weight: bold; /* Жирное начертание */
+ cursor: pointer; /* Вид курсора */
+}
+.tab-title::after {
+ content: '+'; /* Выводим плюс */
+ float: right; /* Размещаем по правому краю */
+}
+.tab-content {
+ padding: 10px 20px; /* Поля вокруг текста */
+}
+.tab :checked + .tab-title {
+ background-color: #50a2de; /* Цвет фона */
+ border-radius: 3px 3px 0 0; /* Скругляем уголки */
+ color: #fff; /* Цвет текста */
+}
+.tab :checked + .tab-title::after {
+ content: '−'; /* Выводим минус */
+}
+.tab :checked ~ .tab-content {
+ display: block; /* Показываем содержимое */
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button  {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button :hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

@@ -22,12 +22,10 @@ class StudentInfo
 
         $this->name_student = $document->find("#content > div > div:nth-child(3) > div.callout.callout-info > div:nth-child(2) > h4 > b")[0]->text();
         $table = $document->find('*[^data-term_id=28]');
-      
-        for ($i = 1; $i < count($table); $i++) {
+        for ($i = 0; $i < count($table); $i++) {
             $item = $table[$i]->text();
             if (stristr($item, 'семестр')) break;
             $this->studyInfo[] = $studyInfo->get_kt_from_string(trim(preg_replace('|\s+|', ' ', $item)));
         }
-
     }
 }

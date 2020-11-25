@@ -9,5 +9,5 @@ class News
    public $date;
    public $previewText;
    public $previewPicture;
-
+   public $size;
 }

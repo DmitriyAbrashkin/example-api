@@ -7,7 +7,7 @@ use DiDom\Document;
 
 class StudentInfo
 {
-    public $name_student;
+    public $nameStudent;
     public $number;
     public $studyInfo;
 
@@ -20,7 +20,7 @@ class StudentInfo
         $site_name = "https://portal.kuzstu.ru/learning/progress/current/report/cp3?search_str=" . $this->number . "&is_filters_enabled=1";
         $document = new Document($site_name, true);
 
-        $this->name_student = $document->find("#content > div > div:nth-child(3) > div.callout.callout-info > div:nth-child(2) > h4 > b")[0]->text();
+        $this->nameStudent = $document->find("#content > div > div:nth-child(3) > div.callout.callout-info > div:nth-child(2) > h4 > b")[0]->text();
         $table = $document->find('*[^data-term_id=28]');
         for ($i = 0; $i < count($table); $i++) {
             $item = $table[$i]->text();

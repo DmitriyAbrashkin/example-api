@@ -28,10 +28,16 @@ class NewsParser
             $newsItem->date = trim($value->find(".news-date-time")[0]->text());
             $newsItem->previewText = $value->find(".news-preview-text")[0]->text();
             $newsItem->previewPicture = $this->host . $this->findPicture($value, ".preview_picture");
+            $newsItem->size = $this->getImageSizeCustom($newsItem->previewPicture);
             $this->news[] = $newsItem;
         }
     }
 
+    public function getImageSizeCustom($url)
+    {
+        list($height, $width) = getimagesize($url);
+        return array($height, $width);
+    }
 
 
     public function findPicture(\DiDom\Element  $value, $selector)

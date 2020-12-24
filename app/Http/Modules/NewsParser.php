@@ -21,7 +21,7 @@ class NewsParser
 
         $newsItems = $this->getDocumentPreviewNewsList()->find(".news-item");
 
-        foreach ($newsItems as $key => $value) {
+        foreach ($newsItems as $value) {
             $newsItem = new News();
             $newsItem->name = $value->find(".news-name a b")[0]->text();
             $newsItem->href = $this->host . $value->find(".news-name a")[0]->getAttribute('href');
@@ -59,6 +59,7 @@ class NewsParser
         $detalNews = new DetalNews();
         $detalNews->newsText = preg_replace('|\s+|', ' ', trim($newsItem->find(".news-text")[0]->text()));
         $detalNews->detailPicture = $this->host .  $this->findPicture($newsItem->toElement(), ".detail_picture");
+        $detalNews->size = $this->getImageSizeCustom($detalNews->detailPicture);
         $this->news = $detalNews;
     }
 

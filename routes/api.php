@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 Route::get('kt/{number}', 'StudentInfoController@index');
 Route::get('news/{number}', 'NewsController@index');
 Route::get('detalNews', 'DetalNewsController@index');
+Route::get('rating', 'RatingController@index');
 
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');

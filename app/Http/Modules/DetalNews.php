@@ -6,4 +6,5 @@ class DetalNews
 {
     public $newsText;
     public $detailPicture;
+    public $size;
 }

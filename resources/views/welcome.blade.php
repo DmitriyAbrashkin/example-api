@@ -282,6 +282,53 @@
         document.getElementById("10").click();
 
     </script>
+    <p id="test"></p>
+
+<input type="button"   value="Say hello" onClick="showAndroidToast()" />
+
+<script type="text/javascript">
+
+    function showAndroidToast() {
+        document.getElementById("test").innerHTML = Android.showToast();
+        console.log( "[eq");
+        console.log( JSON.stringify(Android.showToast() ) );
+    }
+
+   
+
+
+
+</script>
+<script type="text/javascript">
+
+function getLocationConstant()
+{
+  if(navigator.geolocation)
+  {
+   navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+  } else {
+   alert("No GPS support");
+  }
+}
+
+
+function onGeoSuccess(event)
+{
+    document.getElementById("location").value =  event.coords.latitude+", "+event.coords.longitude;
+    alert("Success: "+event.coords.latitude+", "+event.coords.longitude);
+}
+
+
+function onGeoError(event)
+{
+  alert("Error code " + event.code + ". " + event.message);
+}
+
+
+</script>
+
+<input type="text" name="location" id="location" style="width:278px;">
+<button onclick="getLocationConstant()" >Click</button>
 </body>
 
 </html>
